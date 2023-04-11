@@ -1,4 +1,4 @@
-import shutil, argparse
+import shutil, argparse, os
 from datetime import datetime
 from svgutils import transform
 
@@ -65,6 +65,8 @@ if __name__ == '__main__' :
     time = datetime.now()
     timestamp = time.strftime('%Y%m%d')
     filename_postfix = args.name.lower() + '-' + timestamp
+    if not os.path.isdir('./output') :
+        os.mkdir('./output')
     
     match args.template:
         case 'fischer11':
