@@ -1,5 +1,6 @@
 import shutil, argparse
 from datetime import datetime
+from svgutils import transform
 
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -36,6 +37,7 @@ if __name__ == '__main__' :
     #arg FIGURE NAME
     argParser.add_argument('-n',
                            '--name',
+                           default='Unnamed',
                            type=str,
                            help='Write help message here')
     # arg REVISION NUMBER
@@ -56,18 +58,33 @@ if __name__ == '__main__' :
     
     args = argParser.parse_args() 
     
-    time = datetime.now
+    ##~- ------------------------------
+    ##   FILE GENERATION & MODIFICATION
+    ##~- ------------------------------
+    
+    time = datetime.now()
     timestamp = time.strftime('%Y%m%d')
-    filename_postfix = args.name + '-' + timestamp
+    filename_postfix = args.name.lower() + '-' + timestamp
     
     match args.template:
         case 'fischer11':
             if args.color:
-                shutil.copy('./templates/fischer/t_diagram_c-fischer-11.svg', './fischer-11-color'+filename_postfix)
+                src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
+                dest_file = './output/fischer-11-color-'
             else:
-                shutil.copy('./template/fischer/t_diagram_g-fischer-11.svg', './fischer-11-'+filename_postfix)
+                src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
+                dest_file = './output/fischer-11-'
         case 'fischer8':
             if args.color:
-                shutil.copy('./templates/fischer/t_diagram_c-fischer-8.svg', './fischer-8-color'+filename_postfix)
+                src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
+                dest_file = './output/fischer-8-color-'
             else:
-                shutil.copy('./template/fischer/t_diagram_g-fischer-8.svg', './fischer-8-'+filename_postfix)
+                src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
+                dest_file = './output/fischer-8-'
+        case other:
+            print('No match found for the specified template, use the "-l" flag to see the list of available templates')
+    
+    dest_file = dest_file + filename_postfix + '.svg'
+    shutil.copy(src_file, dest_file)
+    
+    target_file = transform.fromfile(dest_file)
