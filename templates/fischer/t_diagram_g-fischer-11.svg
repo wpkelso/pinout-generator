@@ -7,9 +7,33 @@
    viewBox="0 0 449.99997 449.99993"
    version="1.1"
    id="svg5"
+   sodipodi:docname="t_diagram_g-fischer-11.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview192"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.25987967"
+     inkscape:cx="1054.3341"
+     inkscape:cy="1281.3623"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1072"
+     inkscape:window-y="410"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
   <style
      id="style16364">
 .measure-arrow
@@ -64,7 +88,7 @@
   </defs>
   <g
      id="layer1"
-     transform="translate(74.999972,225.0001)"
+     transform="translate(75.000002,-375)"
      style="display:inline">
     <rect
        style="fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:butt;stroke-dasharray:none"
@@ -87,7 +111,7 @@
   <g
      id="layer3"
      style="display:inline"
-     transform="translate(74.999978,222.08969)">
+     transform="translate(75.000008,-377.91041)">
     <circle
        style="fill:#f7f7f7;fill-opacity:1;stroke:#111111;stroke-width:3;stroke-linecap:round"
        id="circle28131"
@@ -116,7 +140,7 @@
   <g
      id="layer8"
      style="display:inline"
-     transform="translate(-2.6527204e-5,1200.0002)">
+     transform="translate(3.6438572e-6,600.0001)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
@@ -152,7 +176,7 @@
   <g
      id="layer7"
      style="display:inline"
-     transform="translate(-2.6527204e-5,1200.0002)">
+     transform="translate(3.6438572e-6,600.0001)">
     <circle
        style="display:inline;opacity:1;fill:#111111;fill-opacity:0.6;stroke:none;stroke-width:4.99999;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:1"
        id="path48079"
@@ -362,7 +386,7 @@
   </g>
   <g
      id="layer6"
-     transform="translate(74.999977,222.0897)"
+     transform="translate(75.000007,-377.9104)"
      style="display:inline">
     <rect
        style="fill:none;fill-opacity:1;stroke:#111111;stroke-width:0.499999;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
@@ -755,17 +779,8 @@
        id="path18624" />
   </g>
   <g
-     id="layer4"
-     style="display:inline"
-     transform="translate(-2.6527204e-5,1200.0002)">
-    <path
-       style="fill:none;stroke:#ff00ff;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.5"
-       d="m -2.4999998e-7,-600.00004 v -75 H 2849.9998 v 75"
-       id="path17919" />
-  </g>
-  <g
      id="layer5"
-     transform="translate(74.999978,222.08969)"
+     transform="translate(75.000008,-377.91041)"
      style="display:inline">
     <circle
        style="fill:none;fill-opacity:1;stroke:#111111;stroke-width:2.5;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
