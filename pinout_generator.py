@@ -64,12 +64,16 @@ if __name__ == '__main__' :
     ##   FILE GENERATION & MODIFICATION
     ##~- ------------------------------
     
+    # generating a timestamp and appending it to the output file name
     time = datetime.now()
     timestamp = time.strftime('%Y%m%d')
     filename_postfix = args.name.lower() + '-' + timestamp
+    
+    # creating an output directory if one does not exist already within the parent directory
     if not os.path.isdir('./output') :
         os.mkdir('./output')
     
+    # determination of which template file to copy to a working document
     match args.template:
         case 'fischer11':
             template_name = '11-Pin Fischer'
@@ -94,6 +98,7 @@ if __name__ == '__main__' :
     dest_file = dest_file + filename_postfix + '.svg'
     shutil.copy(src_file, dest_file)
     
+    ## Administrative details
     with open(dest_file, 'r') as file:
         filedata = file.read()
     
