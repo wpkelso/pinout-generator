@@ -43,8 +43,10 @@ if __name__ == '__main__' :
     # arg REVISION NUMBER
     argParser.add_argument('-r',
                            '--revision',
+                           type=str,
+                           default='1.00',
                            metavar='REVISION NUMBER',
-                           help='Specifiy the revision number of the diagram (DEFAULT="1.0")')
+                           help='Specifiy the revision number of the diagram (DEFAULT="1.00")')
     # arg COLOR SELECTION
     argParser.add_argument('-c',
                            '--color',
@@ -70,6 +72,7 @@ if __name__ == '__main__' :
     
     match args.template:
         case 'fischer11':
+            template_name = '11-Pin Fischer'
             if args.color:
                 src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
                 dest_file = './output/fischer-11-color-'
@@ -77,6 +80,7 @@ if __name__ == '__main__' :
                 src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
                 dest_file = './output/fischer-11-'
         case 'fischer8':
+            template_name = '8-Pin Fischer'
             if args.color:
                 src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
                 dest_file = './output/fischer-8-color-'
@@ -85,8 +89,19 @@ if __name__ == '__main__' :
                 dest_file = './output/fischer-8-'
         case other:
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
+            exit()
     
     dest_file = dest_file + filename_postfix + '.svg'
     shutil.copy(src_file, dest_file)
     
-    target_file = transform.fromfile(dest_file)
+    with open(dest_file, 'r') as file:
+        filedata = file.read()
+    
+    if type(args.name) != None:
+        filedata = filedata.replace(template_name, args.name)
+    filedata = filedata.replace('M.mm', args.revision)
+    filedata = filedata.replace('YYYY.MM.DD', time.strftime('%Y.%m.%d'))
+    
+    with open(dest_file, 'w') as file:
+        file.write(filedata)
+    
