@@ -97,6 +97,33 @@ if __name__ == '__main__' :
             else:
                 src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
                 dest_file = './output/fischer-8-'
+        case 'fischer4':
+            template_name = '4-Pin Fischer'
+            num_pins = 4
+            if args.use_color:
+                src_file = './templates/fischer/t_diagram_c-fischer-4.svg'
+                dest_file = './output/fischer-4-color-'
+            else:
+                src_file = './templates/fischer/t_diagram_g-fischer-4.svg'
+                dest_file = './output/fischer-4-'
+        case 'fischer3':
+            template_name = '3-Pin Fischer'
+            num_pins = 3
+            if args.use_color:
+                src_file = './templates/fischer/t_diagram_c-fischer-3.svg'
+                dest_file = './output/fischer-3-color-'
+            else:
+                src_file = './templates/fischer/t_diagram_g-fischer-3.svg'
+                dest_file = './output/fischer-3-'
+        case 'fischer2':
+            template_name = '2-Pin Fischer'
+            num_pins = 2
+            if args.use_color:
+                src_file = './templates/fischer/t_diagram_c-fischer-2.svg'
+                dest_file = './output/fischer-2-color-'
+            else:
+                src_file = './templates/fischer/t_diagram_g-fischer-2.svg'
+                dest_file = './output/fischer-2-'
         case other:
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
             exit()
@@ -111,6 +138,8 @@ if __name__ == '__main__' :
     tree = ET.parse(target_file)
     root = tree.getroot()
     
+    
+    
     # Pin Color Labels
     print('Relabelling pins with colors...')
     labels = {}
@@ -118,9 +147,10 @@ if __name__ == '__main__' :
         pattern = f'pin_{num+1}_label_text'
         try:
             element = root.find(f'.//*[@id="{pattern}"]')
+            print(element)
             print(f'{num+1} Old: {element.text}')
         except:
-            print(f'#! Failed label renaming at iteration {num}')
+            print(f'#! Failed label renaming at iteration {num+1}')
             
         element.text = args.color[num]
         print(f'  New:{element.text}\n')

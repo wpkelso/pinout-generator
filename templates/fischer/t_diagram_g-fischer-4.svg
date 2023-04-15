@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    sodipodi:docname="t_diagram_g-fischer-4.svg"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:version="1.2.2 (1:1.2.2+202212051551+b0a8486541)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -25,13 +25,13 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.18376265"
-     inkscape:cx="1017.617"
-     inkscape:cy="1469.2866"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1072"
-     inkscape:window-y="410"
+     inkscape:zoom="0.51975926"
+     inkscape:cx="759.00523"
+     inkscape:cy="869.63337"
+     inkscape:window-width="1366"
+     inkscape:window-height="670"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg5" />
   <style
@@ -135,7 +135,7 @@
        r="73.3069" />
   </g>
   <g
-     id="layer8"
+     id="AdminInfo"
      style="display:inline"
      transform="translate(-1200,600.0001)">
     <text
@@ -171,7 +171,7 @@
          y="760.72388">Fig. 4-Pin Fischer</tspan></text>
   </g>
   <g
-     id="layer7"
+     id="draft_lines"
      style="display:inline"
      transform="translate(-1200,600.0001)">
     <path
@@ -358,7 +358,7 @@
        r="19.352737" />
   </g>
   <g
-     id="layer6"
+     id="color_labels"
      transform="translate(-1125,-377.9104)"
      style="display:inline">
     <rect
@@ -753,7 +753,7 @@
        id="path25683-6" />
   </g>
   <g
-     id="layer5"
+     id="pin_symbols"
      transform="translate(-1125,-377.91041)"
      style="display:inline">
     <circle
