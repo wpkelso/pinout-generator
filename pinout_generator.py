@@ -1,6 +1,7 @@
 import shutil, argparse, os
 from datetime import datetime
-from svgutils import transform
+import svgutils.transform as svgtrans
+import svgutils.compose as svgcomp
 
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -77,7 +78,7 @@ if __name__ == '__main__' :
     match args.template:
         case 'fischer11':
             template_name = '11-Pin Fischer'
-            if args.color:
+            if args.use_color:
                 src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
                 dest_file = './output/fischer-11-color-'
             else:
@@ -85,7 +86,7 @@ if __name__ == '__main__' :
                 dest_file = './output/fischer-11-'
         case 'fischer8':
             template_name = '8-Pin Fischer'
-            if args.color:
+            if args.use_color:
                 src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
                 dest_file = './output/fischer-8-color-'
             else:
@@ -98,8 +99,25 @@ if __name__ == '__main__' :
     dest_file = dest_file + filename_postfix + '.svg'
     shutil.copy(src_file, dest_file)
     
+    target_file = dest_file
+    svg = svgcomp.SVG(target_file)
+
+    i = 1
+    while i <= 11:
+        text_element_id = 'pin_' + str(i+1) + '_label_text'
+        target_element = svg.find_id(text_element_id)
+        print(svgcomp.Text(target_element.tostr()).tostr())
+        # target_element.text = args.color[i]
+        
+        i += 1
+         
+    figw = str(svgcomp.Unit(str(svg.width) + "px").to("mm"))
+    figh = str(svgcomp.Unit(str(svg.height) + "px").to("mm"))
+    fig = svgcomp.Figure(figw, figh, svg)
+    fig.save(target_file)
+    
     ## Administrative details
-    with open(dest_file, 'r') as file:
+    with open(target_file, 'r') as file:
         filedata = file.read()
     
     if type(args.name) != None:
@@ -107,6 +125,6 @@ if __name__ == '__main__' :
     filedata = filedata.replace('M.mm', args.revision)
     filedata = filedata.replace('YYYY.MM.DD', time.strftime('%Y.%m.%d'))
     
-    with open(dest_file, 'w') as file:
+    with open(target_file, 'w') as file:
         file.write(filedata)
     

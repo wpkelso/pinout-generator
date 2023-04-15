@@ -647,7 +647,7 @@
          y="478.28595"
          id="text18502"
          inkscape:label="pin_1_label"><tspan
-           id="tspan18500"
+           id="pin_1_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="478.28595">UNC</tspan></text>
@@ -687,7 +687,7 @@
          y="504.04474"
          id="text18506"
          inkscape:label="pin_2_label"><tspan
-           id="tspan18504"
+           id="pin_2_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="504.04474">UNC</tspan></text>
@@ -726,7 +726,7 @@
          y="529.80371"
          id="text18510"
          inkscape:label="pin_3_label"><tspan
-           id="tspan18508"
+           id="pin_3_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="529.80371">UNC</tspan></text>
@@ -765,7 +765,7 @@
          y="555.5625"
          id="text18514"
          inkscape:label="pin_4_label"><tspan
-           id="tspan18512"
+           id="pin_4_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="555.5625">UNC</tspan></text>
@@ -804,7 +804,7 @@
          y="581.32141"
          id="text18518"
          inkscape:label="pin_5_label"><tspan
-           id="tspan18516"
+           id="pin_5_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="581.32141">UNC</tspan></text>
@@ -843,7 +843,7 @@
          y="607.0802"
          id="text18522"
          inkscape:label="pin_6_label"><tspan
-           id="tspan18520"
+           id="pin_6_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="607.0802">UNC</tspan></text>
@@ -882,7 +882,7 @@
          y="632.83911"
          id="text18526"
          inkscape:label="pin_7_label"><tspan
-           id="tspan18524"
+           id="pin_7_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="632.83911">UNC</tspan></text>
@@ -921,7 +921,7 @@
          y="658.59802"
          id="text18530"
          inkscape:label="pin_8_label"><tspan
-           id="tspan18528"
+           id="pin_8_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="658.59802">UNC</tspan></text>
@@ -960,7 +960,7 @@
          y="684.35681"
          id="text18534"
          inkscape:label="pin_9_label"><tspan
-           id="tspan18532"
+           id="pin_9_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="684.35681">UNC</tspan></text>
@@ -999,7 +999,7 @@
          y="710.1156"
          id="text18538"
          inkscape:label="pin_10_label"><tspan
-           id="tspan18536"
+           id="pin_10_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="710.1156">UNC</tspan></text>
@@ -1038,7 +1038,7 @@
          y="735.87451"
          id="text18542"
          inkscape:label="pin_11_label"><tspan
-           id="tspan18540"
+           id="pin_11_label_text"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
            x="-32.808044"
            y="735.87451">UNC</tspan></text>
