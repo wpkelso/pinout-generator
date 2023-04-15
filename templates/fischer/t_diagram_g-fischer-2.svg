@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    sodipodi:docname="t_diagram_g-fischer-2.svg"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:version="1.2.2 (1:1.2.2+202212051551+b0a8486541)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,12 +26,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.3675253"
-     inkscape:cx="579.55194"
-     inkscape:cy="911.50188"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1072"
-     inkscape:window-y="410"
+     inkscape:cx="548.26158"
+     inkscape:cy="911.50187"
+     inkscape:window-width="1366"
+     inkscape:window-height="670"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg5" />
   <style
@@ -135,7 +135,7 @@
        r="73.3069" />
   </g>
   <g
-     id="layer8"
+     id="adminInfo"
      style="display:inline"
      transform="translate(-2400,600.0001)">
     <text
@@ -171,7 +171,7 @@
          y="760.72388">Fig. 2-Pin Fischer</tspan></text>
   </g>
   <g
-     id="layer7"
+     id="draft_lines"
      style="display:inline"
      transform="translate(-2400,600.0001)">
     <circle
@@ -276,72 +276,7 @@
     </g>
   </g>
   <g
-     id="layer2"
-     style="display:none"
-     transform="translate(-2325,222.0897)">
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2550,752.91042 V 452.91041"
-       id="path20244" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2588.8228,747.79929 2511.1771,458.02153"
-       id="path20246" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2625,732.81422 2475,473.00659"
-       id="path20248" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2656.066,708.97643 2443.934,496.84439"
-       id="path20250" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="m 2588.8228,458.02153 -77.6457,289.77776"
-       id="path20252" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2625,473.0066 2475,732.81423"
-       id="path20254" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2656.066,496.84439 2443.934,708.97643"
-       id="path20256" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="m 2679.9038,677.91041 -259.8076,-150"
-       id="path20258" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="M 2694.8889,641.73327 2405.1111,564.08755"
-       id="path20260" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="m 2679.9038,527.91041 -259.8076,150"
-       id="path20262" />
-    <path
-       style="fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="m 2694.8889,564.08755 -289.7778,77.64572"
-       id="path20264" />
-    <path
-       style="display:inline;fill:none;stroke:#00aaff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:0.6"
-       d="m 2400,602.91039 h 300"
-       id="path20266" />
-    <circle
-       style="fill:none;fill-opacity:1;stroke:#fd00fd;stroke-width:1;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:0.6"
-       id="circle20268"
-       cx="2550"
-       cy="602.9104"
-       r="75" />
-    <circle
-       style="display:inline;fill:none;fill-opacity:1;stroke:#fd00fd;stroke-width:1;stroke-linecap:butt;stroke-dasharray:none;stroke-opacity:0.6"
-       id="circle20270"
-       cx="2550"
-       cy="602.9104"
-       r="19.352737" />
-  </g>
-  <g
-     id="layer6"
+     id="color_labels"
      transform="translate(-2325,-377.9104)"
      style="display:inline">
     <rect
@@ -736,7 +671,7 @@
        id="path25683-5" />
   </g>
   <g
-     id="layer5"
+     id="pin_symbols"
      transform="translate(-2325,-377.91041)"
      style="display:inline">
     <circle

@@ -147,9 +147,10 @@ if __name__ == '__main__' :
         pattern = f'pin_{num+1}_label_text'
         try:
             element = root.find(f'.//*[@id="{pattern}"]')
+            print(element)
             print(f'{num+1} Old: {element.text}')
         except:
-            print(f'#! Failed label renaming at iteration {num}')
+            print(f'#! Failed label renaming at iteration {num+1}')
             
         element.text = args.color[num]
         print(f'  New:{element.text}\n')
