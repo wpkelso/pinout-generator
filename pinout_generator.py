@@ -1,10 +1,11 @@
 import shutil, argparse, os
 from datetime import datetime
-import svgutils.transform as svgtrans
-import svgutils.compose as svgcomp
-
+import xml.etree.ElementTree as ET
+    
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+    
+    
     
     ##~- -------------
     ##   CLI ARGUMENTS
@@ -61,6 +62,8 @@ if __name__ == '__main__' :
     
     args = argParser.parse_args() 
     
+    
+    
     ##~- ------------------------------
     ##   FILE GENERATION & MODIFICATION
     ##~- ------------------------------
@@ -68,7 +71,7 @@ if __name__ == '__main__' :
     # generating a timestamp and appending it to the output file name
     time = datetime.now()
     timestamp = time.strftime('%Y%m%d')
-    filename_postfix = args.name.lower() + '-' + timestamp
+    filename_postfix = f'{args.name.lower()}-{timestamp}'
     
     # creating an output directory if one does not exist already within the parent directory
     if not os.path.isdir('./output') :
@@ -78,6 +81,7 @@ if __name__ == '__main__' :
     match args.template:
         case 'fischer11':
             template_name = '11-Pin Fischer'
+            num_pins = 11
             if args.use_color:
                 src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
                 dest_file = './output/fischer-11-color-'
@@ -86,6 +90,7 @@ if __name__ == '__main__' :
                 dest_file = './output/fischer-11-'
         case 'fischer8':
             template_name = '8-Pin Fischer'
+            num_pins = 8
             if args.use_color:
                 src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
                 dest_file = './output/fischer-8-color-'
@@ -96,35 +101,65 @@ if __name__ == '__main__' :
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
             exit()
     
-    dest_file = dest_file + filename_postfix + '.svg'
+    print('Generating working file...')
+    dest_file = f'{dest_file}{filename_postfix}.svg'
     shutil.copy(src_file, dest_file)
     
     target_file = dest_file
-    svg = svgcomp.SVG(target_file)
-
-    i = 1
-    while i <= 11:
-        text_element_id = 'pin_' + str(i+1) + '_label_text'
-        target_element = svg.find_id(text_element_id)
-        print(svgcomp.Text(target_element.tostr()).tostr())
-        # target_element.text = args.color[i]
+    
+    # generating a working xml tree
+    tree = ET.parse(target_file)
+    root = tree.getroot()
+    
+    # Pin Color Labels
+    print('Relabelling pins with colors...')
+    labels = {}
+    for num in range(num_pins):
+        pattern = f'pin_{num+1}_label_text'
+        try:
+            element = root.find(f'.//*[@id="{pattern}"]')
+            print(f'{num+1} Old: {element.text}')
+        except:
+            print(f'#! Failed label renaming at iteration {num}')
+            
+        element.text = args.color[num]
+        print(f'  New:{element.text}\n')
+    print('Finished relabelling pins with colors')
         
-        i += 1
-         
-    figw = str(svgcomp.Unit(str(svg.width) + "px").to("mm"))
-    figh = str(svgcomp.Unit(str(svg.height) + "px").to("mm"))
-    fig = svgcomp.Figure(figw, figh, svg)
-    fig.save(target_file)
+        
+        
+    # Administrative Information
+    print('Adding administrative info...')
     
-    ## Administrative details
-    with open(target_file, 'r') as file:
-        filedata = file.read()
-    
-    if type(args.name) != None:
-        filedata = filedata.replace(template_name, args.name)
-    filedata = filedata.replace('M.mm', args.revision)
-    filedata = filedata.replace('YYYY.MM.DD', time.strftime('%Y.%m.%d'))
-    
-    with open(target_file, 'w') as file:
-        file.write(filedata)
+    pattern = 'gen_timestamp_tspan'
+    gen_time = time.strftime('%Y.%m.%d')
+    print(f'Generation Date: {gen_time}')
+    try:
+        element = root.find(f'.//*[@id="{pattern}"]')
+        element.text = f'Gen {gen_time}'
+    except:
+        print(f'#! Failed at adding timestamp to document')
+        
+    pattern = 'rev_num_tspan'
+    try:
+        element = root.find(f'.//*[@id="{pattern}"]')
+        element.text = f'Rev {args.revision}'
+    except:
+        print('#! Failed at adding revision number to document')
+        
+    pattern = 'fig_name_tspan'
+    try:
+        element = root.find(f'.//*[@id="{pattern}"]')
+        element.text = f'Fig. {args.name}'
+    except:
+        print('#! Failed at adding the figure name to the document')
+        
+    print('Finished adding administrative info')
+        
+        
+        
+    # writing the tree out to the final file
+    print('Generating final file...')
+    tree.write(target_file)
+
     

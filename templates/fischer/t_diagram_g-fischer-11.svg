@@ -595,7 +595,7 @@
        y="-195.60677"
        id="gen_timestamp"
        inkscape:label="gen_timestamp"><tspan
-         id="tspan67437"
+         id="gen_timestamp_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="376.2113"
          y="-195.60677">Gen YYYY.MM.DD</tspan></text>
@@ -618,7 +618,7 @@
        id="fig_name"
        transform="translate(74.999998,-975.00006)"
        inkscape:label="fig_name"><tspan
-         id="tspan9049"
+         id="fig_name_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="300.97565"
          y="760.72388">Fig. 11-Pin Fischer</tspan></text>
