@@ -75,7 +75,9 @@ if __name__ == '__main__' :
     
     # creating an output directory if one does not exist already within the parent directory
     if not os.path.isdir('./output') :
+        print('Creating output directory')
         os.mkdir('./output')
+        print('Created output directory at ./pinout-generator/output...')
     
     # determination of which template file to copy to a working document
     match args.template:
