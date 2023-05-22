@@ -2,10 +2,17 @@ import shutil, argparse, os
 from datetime import datetime
 import xml.etree.ElementTree as ET
     
+FISCHER_LIST = ['fischer11', 'fischer8', 'fischer4', 'fischer3', 'fischer2']
+TEMPLATE_LIST = [FISCHER_LIST]    
+
+def print_template_list() :
+    print('TEMPLATES---------------------')
+    for name in TEMPLATE_LIST:
+        print(name)
+    print('------------------------------')
+    
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
-    
-    
     
     ##~- -------------
     ##   CLI ARGUMENTS
@@ -13,7 +20,9 @@ if __name__ == '__main__' :
     
     # arg TEMPLATE LIST
     argParser.add_argument('-l', 
-                           '--list', 
+                           '--list',
+                           default=False,
+                           action='store_true',
                            help='List the available template options for pinouts')
     # arg DRAFT LINES
     argParser.add_argument('-d',
@@ -61,6 +70,14 @@ if __name__ == '__main__' :
                            help='Specifies the colors of the pins using a 3 letter color code;\nAvailable List:\n    [UNC] Unconnected\n    [RED] Red\n    [ORG] Orange\n    [YLW] Yellow\n    [GRN] Green\n    [BLU] Blue\n    [PPL] Purple\n    [WHT] White\n    [BRN] Brown\n    [BLK] Black\n(Prepending an "S" to any code will convert it to a striped format)')
     
     args = argParser.parse_args() 
+    
+    ##~- ------------------------------
+    ##   TEMPLATE LIST DISPLAY HANDLING
+    ##~- ------------------------------
+    
+    if list:
+        print_template_list()
+        quit()
     
     
     
@@ -139,8 +156,6 @@ if __name__ == '__main__' :
     # generating a working xml tree
     tree = ET.parse(target_file)
     root = tree.getroot()
-    
-    
     
     # Pin Color Labels
     print('Relabelling pins with colors...')

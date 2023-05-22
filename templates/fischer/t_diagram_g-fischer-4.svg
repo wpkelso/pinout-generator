@@ -144,7 +144,7 @@
        x="1575.0924"
        y="-204.88692"
        id="text1387"><tspan
-         id="tspan1385"
+         id="rev_num_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="1575.0924"
          y="-204.88692">Rev M.m</tspan></text>
@@ -154,7 +154,7 @@
        x="1575.1744"
        y="-195.60677"
        id="text1391"><tspan
-         id="tspan1389"
+         id="gen_timestamp_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="1575.1744"
          y="-195.60677">Gen YYYY.MM.DD</tspan></text>
@@ -165,7 +165,7 @@
        y="760.72388"
        id="text42085"
        transform="translate(74.999998,-975.00006)"><tspan
-         id="tspan42083"
+         id="fig_name_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="1500.9757"
          y="760.72388">Fig. 4-Pin Fischer</tspan></text>
