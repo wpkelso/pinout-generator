@@ -28,15 +28,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.4951799"
-     inkscape:cx="774.46601"
-     inkscape:cy="1118.7853"
+     inkscape:zoom="0.9903598"
+     inkscape:cx="904.21683"
+     inkscape:cy="754.27133"
      inkscape:window-width="1440"
      inkscape:window-height="837"
      inkscape:window-x="1432"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g4375" />
+     inkscape:current-layer="figure_base" />
   <style
      id="style16364">
 .measure-arrow
@@ -119,8 +119,7 @@
      id="figure_base"
      style="display:inline"
      transform="translate(75.000008,-377.91041)"
-     inkscape:label="figure_base"
-     sodipodi:insensitive="true">
+     inkscape:label="figure_base">
     <circle
        style="fill:#f7f7f7;fill-opacity:1;stroke:#111111;stroke-width:3;stroke-linecap:round"
        id="fig_ring"
@@ -150,6 +149,72 @@
        style="fill:none;stroke:#111111;stroke-width:1;stroke-dasharray:3, 3;stroke-dashoffset:0"
        d="m 246.7513,602.91392 a 96.751582,96.751582 0 0 1 -96.75158,96.7516 96.751582,96.751582 0 0 1 -96.751567,-96.7516 96.751582,96.751582 0 0 1 96.751567,-96.75159 96.751582,96.751582 0 0 1 96.75158,96.75159 z"
        inkscape:label="fig_pin_out_ring" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_11_out_c"
+       cx="81.577576"
+       cy="534.51172"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_10_out_c"
+       cx="150.00223"
+       cy="506.16284"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_9_out_c"
+       cx="218.41428"
+       cy="534.49921"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_8_out_c"
+       cx="233.80084"
+       cy="651.27417"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_7_out_c"
+       cx="198.39507"
+       cy="686.69397"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_6_out_c"
+       cx="150.00249"
+       cy="699.66608"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_5_out_c"
+       cx="101.61349"
+       cy="686.69635"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_4_out_c"
+       cx="66.204948"
+       cy="651.27655"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_3_out_c"
+       cx="121.44523"
+       cy="586.43243"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_2_out_c"
+       cx="178.56061"
+       cy="586.43481"
+       r="10.125834" />
+    <circle
+       style="display:inline;fill:none;fill-opacity:1;stroke:#111111;stroke-width:1;stroke-linecap:butt;stroke-dasharray:3.00000007,3.00000007;stroke-dashoffset:0;stroke-opacity:1"
+       id="pin_1_out_c"
+       cx="150.00223"
+       cy="635.88666"
+       r="10.125834" />
   </g>
   <g
      id="g4736"
