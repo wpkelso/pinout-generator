@@ -4,23 +4,64 @@ import xml.etree.ElementTree as ET
     
 FISCHER_LIST = ['fischer11', 'fischer8', 'fischer4', 'fischer3', 'fischer2']
 TEMPLATE_LIST = [FISCHER_LIST]    
-
+# ~---------------------------
+# Takes: none
+# Returns: none
+#
+# Prints list of available templates
+# ~---------------------------
 def print_template_list() :
     print('TEMPLATES---------------------')
     for name in TEMPLATE_LIST:
         print(name)
     print('------------------------------')
-    
+# ~---------------------------
+
+# ~---------------------------
+# Takes: str
+# Returns: list of color codes in RGB format
+#
+# Returns a list of associated RGB color codes to a
+# given format code
+# ~---------------------------
 def get_color_code(code) :
-    match code:
-        case 'RED':
-            return 'FF0000'
-        case 'BLU':
-            return '0000FF'
-        case other:
-            print('#!Invalid color code')
-            exit()
+    translated_colors = 2
+    return_codes = []
+    if code.startswith('S'):
+        code = code.strip('S')
+        return_codes.append('F7F7F7')
+        translated_colors -= 1
+        print('This is a striped format')
+    while translated_colors > 0:
+        match code:
+            case 'UNC':
+                return_codes.append('000000')
+            case 'RED':
+                return_codes.append('EA3030')
+            case 'ORG':
+                return_codes.append('DE5D3A')
+            case 'YLW':
+                return_codes.append('F2A833')
+            case 'GRN':
+                return_codes.append('5AB552')
+            case 'BLU':
+                return_codes.append('3388DE')
+            case 'PPL':
+                return_codes.append('CC99FF')
+            case 'WHT':
+                return_codes.append('F7F7F7')
+            case 'BRN':
+                return_codes.append('8D3B25')
+            case 'BLK':
+                return_codes.append('111111')
+            case other:
+                print('#!Invalid color code')
+                exit()
+        translated_colors -= 1 
+    return return_codes
+# ~---------------------------
     
+# ~---------------------------
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     
@@ -75,7 +116,7 @@ if __name__ == '__main__' :
                            dest='color',
                            nargs='+',
                            type=str,
-                           choices=['UNC', 'RED', 'ORG', 'YLW', 'GRN', 'BLU', 'PPL', 'WHT', 'BRN', 'BLK'],
+                           choices=['UNC', 'RED', 'ORG', 'YLW', 'GRN', 'BLU', 'PPL', 'WHT', 'BRN', 'BLK', 'SRED', 'SORG', 'SYLW', 'SGRN', 'SBLU', 'SPPL', 'SWHT', 'SBRN', 'SBLK'],
                            metavar='COLOR',
                            help='Specifies the colors of the pins using a 3 letter color code;\nAvailable List:\n    [UNC] Unconnected\n    [RED] Red\n    [ORG] Orange\n    [YLW] Yellow\n    [GRN] Green\n    [BLU] Blue\n    [PPL] Purple\n    [WHT] White\n    [BRN] Brown\n    [BLK] Black\n(Prepending an "S" to any code will convert it to a striped format)')
     
@@ -180,6 +221,12 @@ if __name__ == '__main__' :
     if args.use_color:
         print('Adding colors to pin symbols...')
         for num in range(num_pins):
+            assigned_color = get_color_code(args.color[num])
+            if args.color[num] == 'UNC':
+                opacity = 0
+            else:
+                opacity = 1
+            
             # Coloring top of circle
             pattern = f'pin_{num+1}_color_top'
             try:
@@ -187,9 +234,7 @@ if __name__ == '__main__' :
                 print(element)
             except:
                 print(f'#! Failed symbol coloring at iteration {num+1} top')
-                
-            assigned_color = get_color_code(args.color[num])
-            style_string = f'display:inline;fill:#{assigned_color};fill-opacity:1;'
+            style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
             element.set('style', style_string)
             print({f'    New:{args.color[num]}'})
             
@@ -201,8 +246,7 @@ if __name__ == '__main__' :
             except:
                 print(f'#! Failed symbol coloring at iteration {num+1} bot')
                 
-            assigned_color = get_color_code(args.color[num])
-            style_string = f'display:inline;fill:#{assigned_color};fill-opacity:1;'
+            style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
             element.set('style', style_string)
             print({f'    New:{args.color[num]}'})
         print('Finished coloring symbols')
