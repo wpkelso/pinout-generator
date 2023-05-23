@@ -21,6 +21,7 @@ if __name__ == '__main__' :
     # arg TEMPLATE LIST
     argParser.add_argument('-l', 
                            '--list',
+                           dest='print_list',
                            default=False,
                            action='store_true',
                            help='List the available template options for pinouts')
@@ -75,11 +76,9 @@ if __name__ == '__main__' :
     ##   TEMPLATE LIST DISPLAY HANDLING
     ##~- ------------------------------
     
-    if list:
+    if args.print_list:
         print_template_list()
         quit()
-    
-    
     
     ##~- ------------------------------
     ##   FILE GENERATION & MODIFICATION

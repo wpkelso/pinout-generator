@@ -28,13 +28,13 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.32"
-     inkscape:cx="725"
-     inkscape:cy="971.875"
-     inkscape:window-width="1440"
-     inkscape:window-height="837"
-     inkscape:window-x="1432"
-     inkscape:window-y="-8"
+     inkscape:zoom="1.4454628"
+     inkscape:cx="752.70011"
+     inkscape:cy="1448.3251"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg5" />
   <style
@@ -570,14 +570,14 @@
          y="406.99561">Gen YYYY.MM.DD</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
-       x="122.23233"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:start;text-anchor:start;display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
+       x="74.811264"
        y="397.71545"
        id="rev_num"
        inkscape:label="rev_num"><tspan
          id="rev_num_tspan"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
-         x="122.23233"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:start;text-anchor:start;fill:#111111;fill-opacity:1;stroke-width:0.264583"
+         x="74.811264"
          y="397.71545">Rev M.mm</tspan></text>
     <text
        xml:space="preserve"
