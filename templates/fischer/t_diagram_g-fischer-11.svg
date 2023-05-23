@@ -28,15 +28,15 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.24758995"
-     inkscape:cx="102.99287"
-     inkscape:cy="957.22787"
+     inkscape:zoom="0.4951799"
+     inkscape:cx="774.46601"
+     inkscape:cy="1118.7853"
      inkscape:window-width="1440"
      inkscape:window-height="837"
      inkscape:window-x="1432"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg5" />
+     inkscape:current-layer="g4375" />
   <style
      id="style16364">
 .measure-arrow
@@ -580,41 +580,40 @@
   </g>
   <g
      id="g4375"
-     inkscape:label="figure_info"
-     sodipodi:insensitive="true">
+     inkscape:label="figure_info">
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
        x="157.60519"
-       y="404.39334"
+       y="406.99561"
        id="gen_timestamp"
        inkscape:label="gen_timestamp"><tspan
          id="gen_timestamp_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="157.60519"
-         y="404.39334">Gen YYYY.MM.DD</tspan></text>
+         y="406.99561">Gen YYYY.MM.DD</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
        x="122.23233"
-       y="395.11319"
+       y="397.71545"
        id="rev_num"
        inkscape:label="rev_num"><tspan
          id="rev_num_tspan"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.87778px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="122.23233"
-         y="395.11319">Rev M.mm</tspan></text>
+         y="397.71545">Rev M.mm</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:end;text-anchor:end;display:inline;fill:#111111;fill-opacity:1;stroke-width:0.264583"
-       x="266.9921"
+       x="-116.88449"
        y="385.72391"
        id="fig_name"
        inkscape:label="fig_name"><tspan
          id="fig_name_tspan"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;fill:#111111;fill-opacity:1;stroke-width:0.264583"
-         x="266.9921"
-         y="385.72391">Fig. 11-Pin Fischer</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:start;text-anchor:start;fill:#111111;fill-opacity:1;stroke-width:0.264583"
+         x="73.921059"
+         y="385.72391">Fig. XX-Pin Fischer</tspan></text>
   </g>
   <g
      id="g5075"
