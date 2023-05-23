@@ -11,6 +11,16 @@ def print_template_list() :
         print(name)
     print('------------------------------')
     
+def get_color_code(code) :
+    match code:
+        case 'RED':
+            return 'FF0000'
+        case 'BLU':
+            return '0000FF'
+        case other:
+            print('#!Invalid color code')
+            exit()
+    
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     
@@ -41,9 +51,8 @@ if __name__ == '__main__' :
                            '--usecolor',
                            '--usecolour',
                            dest='use_color',
-                           type=bool,
                            default=False,
-                           metavar='USE COLOR TEMPLATE',
+                           action='store_true',
                            help='Tells the script to use the color templates rather than the greyscale templates'
                            )
     #arg FIGURE NAME
@@ -100,47 +109,42 @@ if __name__ == '__main__' :
         case 'fischer11':
             template_name = '11-Pin Fischer'
             num_pins = 11
+            src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
                 dest_file = './output/fischer-11-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
                 dest_file = './output/fischer-11-'
         case 'fischer8':
             template_name = '8-Pin Fischer'
             num_pins = 8
+            src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
                 dest_file = './output/fischer-8-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
                 dest_file = './output/fischer-8-'
         case 'fischer4':
             template_name = '4-Pin Fischer'
             num_pins = 4
+            src_file = './templates/fischer/t_diagram_g-fischer-4.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-4.svg'
                 dest_file = './output/fischer-4-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-4.svg'
                 dest_file = './output/fischer-4-'
         case 'fischer3':
             template_name = '3-Pin Fischer'
             num_pins = 3
+            src_file = './templates/fischer/t_diagram_g-fischer-3.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-3.svg'
                 dest_file = './output/fischer-3-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-3.svg'
                 dest_file = './output/fischer-3-'
         case 'fischer2':
             template_name = '2-Pin Fischer'
             num_pins = 2
+            src_file = './templates/fischer/t_diagram_g-fischer-2.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-2.svg'
                 dest_file = './output/fischer-2-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-2.svg'
                 dest_file = './output/fischer-2-'
         case other:
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
@@ -169,13 +173,43 @@ if __name__ == '__main__' :
             print(f'#! Failed label renaming at iteration {num+1}')
             
         element.text = args.color[num]
-        print(f'  New:{element.text}\n')
+        print(f'  New:{element.text}')
     print('Finished relabelling pins with colors')
+    
+    # Pin Symbol Colors
+    if args.use_color:
+        print('Adding colors to pin symbols...')
+        for num in range(num_pins):
+            # Coloring top of circle
+            pattern = f'pin_{num+1}_color_top'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+            except:
+                print(f'#! Failed symbol coloring at iteration {num+1} top')
+                
+            assigned_color = get_color_code(args.color[num])
+            style_string = f'display:inline;fill:#{assigned_color};fill-opacity:1;'
+            element.set('style', style_string)
+            print({f'    New:{args.color[num]}'})
+            
+            # Coloring bottom of circle
+            pattern = f'pin_{num+1}_color_bot'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+            except:
+                print(f'#! Failed symbol coloring at iteration {num+1} bot')
+                
+            assigned_color = get_color_code(args.color[num])
+            style_string = f'display:inline;fill:#{assigned_color};fill-opacity:1;'
+            element.set('style', style_string)
+            print({f'    New:{args.color[num]}'})
+        print('Finished coloring symbols')
         
         
-        
-    # Administrative Information
-    print('Adding administrative info...')
+    # Document Information
+    print('Adding document info...')
     
     pattern = 'gen_timestamp_tspan'
     gen_time = time.strftime('%Y.%m.%d')
@@ -200,12 +234,13 @@ if __name__ == '__main__' :
     except:
         print('#! Failed at adding the figure name to the document')
         
-    print('Finished adding administrative info')
+    print('Finished adding document info')
         
         
         
     # writing the tree out to the final file
     print('Generating final file...')
     tree.write(target_file)
+    print(f'File generated at {dest_file}')
 
     
