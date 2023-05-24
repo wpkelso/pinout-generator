@@ -4,13 +4,64 @@ import xml.etree.ElementTree as ET
     
 FISCHER_LIST = ['fischer11', 'fischer8', 'fischer4', 'fischer3', 'fischer2']
 TEMPLATE_LIST = [FISCHER_LIST]    
-
+# ~---------------------------
+# Takes: none
+# Returns: none
+#
+# Prints list of available templates
+# ~---------------------------
 def print_template_list() :
     print('TEMPLATES---------------------')
     for name in TEMPLATE_LIST:
         print(name)
     print('------------------------------')
+# ~---------------------------
+
+# ~---------------------------
+# Takes: str
+# Returns: list of color codes in RGB format
+#
+# Returns a list of associated RGB color codes to a
+# given format code
+# ~---------------------------
+def get_color_code(code) :
+    translated_colors = 2
+    return_codes = []
+    if code.startswith('S'):
+        code = code.strip('S')
+        return_codes.append('F7F7F7')
+        translated_colors -= 1
+        print('This is a striped format')
+    while translated_colors > 0:
+        match code:
+            case 'UNC':
+                return_codes.append('000000')
+            case 'RED':
+                return_codes.append('EA3030')
+            case 'ORG':
+                return_codes.append('DE5D3A')
+            case 'YLW':
+                return_codes.append('F2A833')
+            case 'GRN':
+                return_codes.append('5AB552')
+            case 'BLU':
+                return_codes.append('3388DE')
+            case 'PPL':
+                return_codes.append('CC99FF')
+            case 'WHT':
+                return_codes.append('F7F7F7')
+            case 'BRN':
+                return_codes.append('8D3B25')
+            case 'BLK':
+                return_codes.append('111111')
+            case other:
+                print('#!Invalid color code')
+                exit()
+        translated_colors -= 1 
+    return return_codes
+# ~---------------------------
     
+# ~---------------------------
 if __name__ == '__main__' :
     argParser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
     
@@ -41,9 +92,8 @@ if __name__ == '__main__' :
                            '--usecolor',
                            '--usecolour',
                            dest='use_color',
-                           type=bool,
                            default=False,
-                           metavar='USE COLOR TEMPLATE',
+                           action='store_true',
                            help='Tells the script to use the color templates rather than the greyscale templates'
                            )
     #arg FIGURE NAME
@@ -66,7 +116,7 @@ if __name__ == '__main__' :
                            dest='color',
                            nargs='+',
                            type=str,
-                           choices=['UNC', 'RED', 'ORG', 'YLW', 'GRN', 'BLU', 'PPL', 'WHT', 'BRN', 'BLK'],
+                           choices=['UNC', 'RED', 'ORG', 'YLW', 'GRN', 'BLU', 'PPL', 'WHT', 'BRN', 'BLK', 'SRED', 'SORG', 'SYLW', 'SGRN', 'SBLU', 'SPPL', 'SWHT', 'SBRN', 'SBLK'],
                            metavar='COLOR',
                            help='Specifies the colors of the pins using a 3 letter color code;\nAvailable List:\n    [UNC] Unconnected\n    [RED] Red\n    [ORG] Orange\n    [YLW] Yellow\n    [GRN] Green\n    [BLU] Blue\n    [PPL] Purple\n    [WHT] White\n    [BRN] Brown\n    [BLK] Black\n(Prepending an "S" to any code will convert it to a striped format)')
     
@@ -100,47 +150,42 @@ if __name__ == '__main__' :
         case 'fischer11':
             template_name = '11-Pin Fischer'
             num_pins = 11
+            src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-11.svg'
                 dest_file = './output/fischer-11-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-11.svg'
                 dest_file = './output/fischer-11-'
         case 'fischer8':
             template_name = '8-Pin Fischer'
             num_pins = 8
+            src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-8.svg'
                 dest_file = './output/fischer-8-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-8.svg'
                 dest_file = './output/fischer-8-'
         case 'fischer4':
             template_name = '4-Pin Fischer'
             num_pins = 4
+            src_file = './templates/fischer/t_diagram_g-fischer-4.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-4.svg'
                 dest_file = './output/fischer-4-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-4.svg'
                 dest_file = './output/fischer-4-'
         case 'fischer3':
             template_name = '3-Pin Fischer'
             num_pins = 3
+            src_file = './templates/fischer/t_diagram_g-fischer-3.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-3.svg'
                 dest_file = './output/fischer-3-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-3.svg'
                 dest_file = './output/fischer-3-'
         case 'fischer2':
             template_name = '2-Pin Fischer'
             num_pins = 2
+            src_file = './templates/fischer/t_diagram_g-fischer-2.svg'
             if args.use_color:
-                src_file = './templates/fischer/t_diagram_c-fischer-2.svg'
                 dest_file = './output/fischer-2-color-'
             else:
-                src_file = './templates/fischer/t_diagram_g-fischer-2.svg'
                 dest_file = './output/fischer-2-'
         case other:
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
@@ -169,13 +214,85 @@ if __name__ == '__main__' :
             print(f'#! Failed label renaming at iteration {num+1}')
             
         element.text = args.color[num]
-        print(f'  New:{element.text}\n')
+        print(f'  New:{element.text}')
     print('Finished relabelling pins with colors')
+    
+    # Pin Symbol Colors
+    if args.use_color:
+        print('Adding colors to pin symbols...')
+        for num in range(num_pins):
+            assigned_color = get_color_code(args.color[num])
+            if args.color[num] == 'UNC':
+                opacity = 0
+            else:
+                opacity = 1
+            
+            # Coloring top of circle
+            pattern = f'pin_{num+1}_color_top'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+            except:
+                print(f'#! Failed symbol coloring at iteration {num+1} top')
+            style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
+            element.set('style', style_string)
+            print({f'    New:{args.color[num]}'})
+            
+            # Coloring bottom of circle
+            pattern = f'pin_{num+1}_color_bot'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+            except:
+                print(f'#! Failed symbol coloring at iteration {num+1} bot')
+                
+            style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
+            element.set('style', style_string)
+            print({f'    New:{args.color[num]}'})
+        print('Finished coloring symbols')
+           
+    # Pin Label Colors
+        print('Adding colors to pin labels...')
+        for num in range(num_pins):
+            assigned_color = get_color_code(args.color[num])
+            if args.color[num] == 'UNC':
+                opacity = 0
+            else:
+                opacity = 1
+            
+            # Coloring top of square
+            pattern = f'pin_{num+1}_label_c_top'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+                style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
+                element.set('style', style_string)
+                print({f'    New:{args.color[num]}'})
+            except:
+                print(f'#! Failed label coloring at iteration {num+1} top')
+            
+            # Coloring bottom of square
+            pattern = f'pin_{num+1}_label_c_bot'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+                style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
+                element.set('style', style_string)
+                print({f'    New:{args.color[num]}'})
+            except:
+                print(f'#! Failed label coloring at iteration {num+1} bot')
+        print('Finished coloring labels')
         
+    # Modifying red dot
+        try:
+            element = root.find('.//*[@id="fig_dot"]')
+            style_string = 'fill:#EA3030;fill-opacity:1;stroke:#111111;stroke-width:3;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1'
+            element.set('style', style_string)
+        except:
+            print('#! Failed to find red dot element')  
         
-        
-    # Administrative Information
-    print('Adding administrative info...')
+    # Document Information
+    print('Adding document info...')
     
     pattern = 'gen_timestamp_tspan'
     gen_time = time.strftime('%Y.%m.%d')
@@ -200,12 +317,13 @@ if __name__ == '__main__' :
     except:
         print('#! Failed at adding the figure name to the document')
         
-    print('Finished adding administrative info')
+    print('Finished adding document info')
         
         
         
     # writing the tree out to the final file
     print('Generating final file...')
     tree.write(target_file)
+    print(f'File generated at {dest_file}')
 
     
