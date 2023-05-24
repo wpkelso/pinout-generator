@@ -250,7 +250,46 @@ if __name__ == '__main__' :
             element.set('style', style_string)
             print({f'    New:{args.color[num]}'})
         print('Finished coloring symbols')
+           
+    # Pin Label Colors
+        print('Adding colors to pin labels...')
+        for num in range(num_pins):
+            assigned_color = get_color_code(args.color[num])
+            if args.color[num] == 'UNC':
+                opacity = 0
+            else:
+                opacity = 1
+            
+            # Coloring top of square
+            pattern = f'pin_{num+1}_label_c_top'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+                style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
+                element.set('style', style_string)
+                print({f'    New:{args.color[num]}'})
+            except:
+                print(f'#! Failed label coloring at iteration {num+1} top')
+            
+            # Coloring bottom of square
+            pattern = f'pin_{num+1}_label_c_bot'
+            try:
+                element = root.find(f'.//*[@id="{pattern}"]')
+                print(element)
+                style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
+                element.set('style', style_string)
+                print({f'    New:{args.color[num]}'})
+            except:
+                print(f'#! Failed label coloring at iteration {num+1} bot')
+        print('Finished coloring labels')
         
+    # Modifying red dot
+        try:
+            element = root.find('.//*[@id="fig_dot"]')
+            style_string = 'fill:#EA3030;fill-opacity:1;stroke:#111111;stroke-width:3;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1'
+            element.set('style', style_string)
+        except:
+            print('#! Failed to find red dot element')  
         
     # Document Information
     print('Adding document info...')
