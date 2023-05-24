@@ -28,13 +28,13 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.43766139"
-     inkscape:cx="718.59206"
-     inkscape:cy="868.25114"
-     inkscape:window-width="1440"
-     inkscape:window-height="837"
-     inkscape:window-x="1432"
-     inkscape:window-y="-8"
+     inkscape:zoom="0.5"
+     inkscape:cx="850"
+     inkscape:cy="851"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg5" />
   <style
@@ -413,12 +413,13 @@
          y="385.72391">Fig. XX-Pin Fischer</tspan></text>
   </g>
   <g
-     id="pin_labels"
-     transform="translate(-17.034879,116.41403)"
-     sodipodi:insensitive="true"
-     style="display:inline">
+     id="g5075"
+     inkscape:label="pin_labels"
+     transform="translate(-17.034873,116.41403)"
+     sodipodi:insensitive="true">
     <g
-       id="pin_1"
+       id="g1924"
+       inkscape:label="pin_1"
        transform="translate(487.75025,-377.91041)">
       <rect
          style="fill:#98ebff;fill-opacity:0;stroke:#111111;stroke-width:0.499999;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
@@ -430,26 +431,15 @@
          inkscape:label="pin_1_box" />
       <text
          xml:space="preserve"
-         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:end;text-anchor:end;stroke-width:0.264583"
-         x="-32.808044"
+         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-92.117256"
          y="478.28595"
          id="text18502"
          inkscape:label="pin_1_label"><tspan
            id="pin_1_label_text"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
-           x="-32.808044"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:start;text-anchor:start;stroke-width:0.264583"
+           x="-63.385212"
            y="478.28595">UNC</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;fill:#111111;fill-opacity:1;stroke-width:0.264583"
-         x="-84.323631"
-         y="478.82001"
-         id="text18546"
-         inkscape:label="pin_1_num"><tspan
-           id="tspan18544"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#111111;fill-opacity:1;stroke-width:0.264583"
-           x="-84.323631"
-           y="478.82001">1</tspan></text>
       <path
          style="display:inline;fill:none;stroke:#111111;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
          d="m -69.030596,463.17477 -20.432694,20.7735"
@@ -457,7 +447,8 @@
          inkscape:label="pin_1_unc" />
     </g>
     <g
-       id="pin_2"
+       id="g1932"
+       inkscape:label="pin_2"
        transform="translate(487.75025,-377.91041)">
       <rect
          style="display:inline;fill:#98ebff;fill-opacity:0;stroke:#111111;stroke-width:0.499999;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
@@ -469,31 +460,73 @@
          inkscape:label="pin_2_box" />
       <text
          xml:space="preserve"
-         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:end;text-anchor:end;display:inline;stroke-width:0.264583"
-         x="-32.808044"
+         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;text-align:start;text-anchor:start;display:inline;stroke-width:0.264583"
+         x="-92.117256"
          y="504.04474"
          id="text18506"
          inkscape:label="pin_2_label"><tspan
            id="pin_2_label_text"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:end;text-anchor:end;stroke-width:0.264583"
-           x="-32.808044"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:start;text-anchor:start;stroke-width:0.264583"
+           x="-63.385212"
            y="504.04474">UNC</tspan></text>
+      <path
+         style="fill:none;stroke:#111111;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
+         d="m -69.030596,489.04447 -20.432695,20.7735"
+         id="path18606"
+         inkscape:label="pin_2_unc" />
+    </g>
+  </g>
+  <g
+     id="pin_label_color"
+     style="display:inline"
+     transform="translate(0,116.41398)"
+     sodipodi:insensitive="true">
+    <g
+       id="pin_1_label_color">
+      <path
+         style="fill:#000000;fill-opacity:0.505;stroke:none;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 381.25206,106.03777 401.68478,85.264333 H 381.25206 Z"
+         id="pin_1_label_c_top" />
+      <path
+         style="fill:#000000;fill-opacity:0.505;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 381.25206,106.03786 401.68478,85.264359 V 106.03777 Z"
+         id="pin_1_label_c_bot" />
+      <text
+         xml:space="preserve"
+         style="font-size:16.9333px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:Cambria;fill:#111111;fill-opacity:1;stroke-width:0.264583"
+         x="-84.323631"
+         y="478.82001"
+         id="text18546"
+         inkscape:label="pin_1_num"
+         transform="translate(470.71537,-377.91041)"><tspan
+           id="tspan18544"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#111111;fill-opacity:1;stroke-width:0.264583"
+           x="-84.323631"
+           y="478.82001">1</tspan></text>
+    </g>
+    <g
+       id="pin_2_label_color"
+       transform="translate(1.601709e-5,25.869782)">
+      <path
+         style="fill:#000000;fill-opacity:0.505;stroke:none;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+         d="M 381.25206,106.03777 401.68478,85.264333 H 381.25206 Z"
+         id="pin_2_label_c_top" />
+      <path
+         style="fill:#000000;fill-opacity:0.505;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 381.25206,106.03786 401.68478,85.264359 V 106.03777 Z"
+         id="pin_2_label_c_bot" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.9333px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#111111;fill-opacity:1;stroke-width:0.264583"
          x="-84.0177"
          y="504.74359"
          id="text18550"
-         inkscape:label="pin_2_num"><tspan
+         inkscape:label="pin_2_num"
+         transform="translate(470.71535,-403.78019)"><tspan
            id="tspan18548"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier New';-inkscape-font-specification:'Courier New';fill:#111111;fill-opacity:1;stroke-width:0.264583"
            x="-84.0177"
            y="504.74359">2</tspan></text>
-      <path
-         style="fill:none;stroke:#111111;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:1.5, 1.5;stroke-dashoffset:0;stroke-opacity:0.6"
-         d="m -69.030596,489.04447 -20.432695,20.7735"
-         id="path18606"
-         inkscape:label="pin_2_unc" />
     </g>
   </g>
 </svg>
