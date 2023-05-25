@@ -1,6 +1,12 @@
+# ~---------------------------
+# SCRIPT HEADER HERE
+# ~---------------------------
+
 import shutil, argparse, os
 from datetime import datetime
 import xml.etree.ElementTree as ET
+
+import svgfns
     
 FISCHER_LIST = ['fischer11', 'fischer8', 'fischer4', 'fischer3', 'fischer2']
 TEMPLATE_LIST = [FISCHER_LIST]    
@@ -29,31 +35,31 @@ def get_color_code(code) :
     return_codes = []
     if code.startswith('S'):
         code = code.strip('S')
-        return_codes.append('F7F7F7')
+        return_codes.append('#F7F7F7')
         translated_colors -= 1
         print('This is a striped format')
     while translated_colors > 0:
         match code:
             case 'UNC':
-                return_codes.append('000000')
+                return_codes.append('#000000')
             case 'RED':
-                return_codes.append('EA3030')
+                return_codes.append('#EA3030')
             case 'ORG':
-                return_codes.append('DE5D3A')
+                return_codes.append('#DE5D3A')
             case 'YLW':
-                return_codes.append('F2A833')
+                return_codes.append('#F2A833')
             case 'GRN':
-                return_codes.append('5AB552')
+                return_codes.append('#5AB552')
             case 'BLU':
-                return_codes.append('3388DE')
+                return_codes.append('#3388DE')
             case 'PPL':
-                return_codes.append('CC99FF')
+                return_codes.append('#CC99FF')
             case 'WHT':
-                return_codes.append('F7F7F7')
+                return_codes.append('#F7F7F7')
             case 'BRN':
-                return_codes.append('8D3B25')
+                return_codes.append('#8D3B25')
             case 'BLK':
-                return_codes.append('111111')
+                return_codes.append('#111111')
             case other:
                 print('#!Invalid color code')
                 exit()
@@ -198,7 +204,7 @@ if __name__ == '__main__' :
     target_file = dest_file
     
     # generating a working xml tree
-    tree = ET.parse(target_file)
+    tree = ET.parse(target_file) 
     root = tree.getroot()
     
     # Pin Color Labels
@@ -211,7 +217,7 @@ if __name__ == '__main__' :
             print(element)
             print(f'{num+1} Old: {element.text}')
         except:
-            print(f'#! Failed label renaming at iteration {num+1}')
+            print(f'!! FAILED label renaming at iteration {num+1}')
             
         element.text = args.color[num]
         print(f'  New:{element.text}')
@@ -229,26 +235,11 @@ if __name__ == '__main__' :
             
             # Coloring top of circle
             pattern = f'pin_{num+1}_color_top'
-            try:
-                element = root.find(f'.//*[@id="{pattern}"]')
-                print(element)
-            except:
-                print(f'#! Failed symbol coloring at iteration {num+1} top')
-            style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
-            element.set('style', style_string)
-            print({f'    New:{args.color[num]}'})
+            root = svgfns.color_element(root, pattern, assigned_color[0], opacity)
             
             # Coloring bottom of circle
             pattern = f'pin_{num+1}_color_bot'
-            try:
-                element = root.find(f'.//*[@id="{pattern}"]')
-                print(element)
-            except:
-                print(f'#! Failed symbol coloring at iteration {num+1} bot')
-                
-            style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
-            element.set('style', style_string)
-            print({f'    New:{args.color[num]}'})
+            root = svgfns.color_element(root, pattern, assigned_color[1], opacity)
         print('Finished coloring symbols')
            
     # Pin Label Colors
@@ -262,28 +253,14 @@ if __name__ == '__main__' :
             
             # Coloring top of square
             pattern = f'pin_{num+1}_label_c_top'
-            try:
-                element = root.find(f'.//*[@id="{pattern}"]')
-                print(element)
-                style_string = f'display:inline;fill:#{assigned_color[0]};fill-opacity:{opacity};'
-                element.set('style', style_string)
-                print({f'    New:{args.color[num]}'})
-            except:
-                print(f'#! Failed label coloring at iteration {num+1} top')
+            root = svgfns.color_element(root, pattern, assigned_color[1], opacity)
             
             # Coloring bottom of square
             pattern = f'pin_{num+1}_label_c_bot'
-            try:
-                element = root.find(f'.//*[@id="{pattern}"]')
-                print(element)
-                style_string = f'display:inline;fill:#{assigned_color[1]};fill-opacity:{opacity};'
-                element.set('style', style_string)
-                print({f'    New:{args.color[num]}'})
-            except:
-                print(f'#! Failed label coloring at iteration {num+1} bot')
+            root = svgfns.color_element(root, pattern, assigned_color[1], opacity)
         print('Finished coloring labels')
         
-    # Modifying red dot
+    # Modifying red dot on Fischer
         try:
             element = root.find('.//*[@id="fig_dot"]')
             style_string = 'fill:#EA3030;fill-opacity:1;stroke:#111111;stroke-width:3;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1'
