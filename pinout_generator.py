@@ -43,7 +43,7 @@ if __name__ == '__main__' :
                            '--name',
                            default='Unnamed',
                            type=str,
-                           help='Write help message here')
+                           help='Write help message here') #TODO finish help message
     # arg REVISION NUMBER
     argParser.add_argument('-r',
                            '--revision',
@@ -67,8 +67,8 @@ if __name__ == '__main__' :
     ##~- ------------------------------
     ##   TEMPLATE LIST DISPLAY HANDLING
     ##~- ------------------------------
-    FISCHER_LIST = ['fischer:11', 'fischer:8', 'fischer:4', 'fischer:3', 'fischer:2']
-    TEMPLATE_LIST = [FISCHER_LIST]
+    FISCHER_LIST = ('fischer:11', 'fischer:8', 'fischer:4', 'fischer:3', 'fischer:2')
+    TEMPLATE_LIST = (FISCHER_LIST)
     
     if args.print_list:
         print('TEMPLATES---------------------')
@@ -95,20 +95,33 @@ if __name__ == '__main__' :
     # determination of which template file to generate a working document from
     template = args.template.split(':')
     family = template[0]
-    num_pins = template[1]
+    num_pins = int(template[1])
+    print(f'Specified template: "{family}"')
+    print(f'Specified number of pins: "{num_pins}"')
+
     match family:
         case 'fischer':
-            if num_pins in {2, 3, 4, 8, 11}:
+            print('Matched family!')
+            if num_pins in (2, 3, 4, 8, 11):
+                print('Matched template!')
                 template_name = f'{num_pins}-Pin Fischer'
                 src_file = f'./templates/fischer/t_fischer-{num_pins}.svg'
                 dest_file = f'./output/fischer-{num_pins}-'
                 if args.no_color:
                     dest_file = dest_file.append('nocolor-')
+            else:
+                print('No match found for the specified template, use the "-l" flag to see the list of available templates')
+                exit()
         case other:
             print('No match found for the specified template, use the "-l" flag to see the list of available templates')
             exit()
     
-    print('Generating working file...')
+    # checking to make sure the user input the correct amount of color arguments, done before copying the file to prevent partial artifacts
+    if len(args.color) != num_pins:
+        print('!! User did not input the correct number of colors. Please check your command and try again.')
+        quit()
+    
+    print(f'Generating working file using filename {dest_file}...')
     dest_file = f'{dest_file}{filename_postfix}.svg'
     shutil.copy(src_file, dest_file)
     
