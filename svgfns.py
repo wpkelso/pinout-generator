@@ -8,13 +8,13 @@ def color_element(root, pattern, color, opacity):
     
     try:
         element = root.find(f'.//*[@id="{pattern}"]')
-        print(element)
+        #print(element)
     except:
         print(f'!! FAILED coloring at element "{pattern}"')
         
     try:
         current_style = element.get('style')
-        print(current_style)
+        #print(current_style)
         new_style = re.sub('#[0-9A-Fa-f]{6}', color, current_style, 1)
     except:
         print(f'!! Failed regex substitution while coloring "{pattern}"')
