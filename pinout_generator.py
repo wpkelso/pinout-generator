@@ -5,8 +5,7 @@
 import shutil, argparse, os
 from datetime import datetime
 import xml.etree.ElementTree as ET
-
-import helperfns, svgfns    
+ 
 import fischer
 
 # ~---------------------------
