@@ -39,8 +39,7 @@ def get_color_code(code):
                 return_codes.append('#8D3B25')
             case 'BLK':
                 return_codes.append('#111111')
-            case "GRY":
-                return_codes.append('#808080')
+            
             case other:
                 print('#!Invalid color code')
                 exit()
